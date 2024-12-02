@@ -37,19 +37,59 @@ Diff = A ⊕ B ⊕ Bin
 Borrow out = A'Bin + A'B + BBin
 
 **Truthtable**
+![Screenshot 2024-12-02 221128](https://github.com/user-attachments/assets/8150782c-573e-4439-a656-1f2fe4883366)
+![Screenshot 2024-12-02 221202](https://github.com/user-attachments/assets/a2920ab1-90ec-4c38-a25d-6ea43684634a)
 
 **Procedure**
+ Full Adder: Inputs: Three inputs: A, B (the two bits to be added), and Cin (the carry-in bit from a
+ previous addition). Outputs: Two outputs: Sum (the resulting sum) and Cout (the carry-out bit).
+ Logic: Sum = A ^ B ^ Cin (XOR operation). Cout = (A & B) | (A & Cin) | (B & Cin) (carry occurs if at
+ least two inputs are 1).
+ Full Subtractor: Inputs: Three inputs: A, B (the two bits, where A - B is calculated), and Bin (the
+ borrow-in from a previous subtraction). Outputs: Two outputs: Diff (the resulting difference) and
+ Bout (the borrow out bit). Logic: Diff = A ^ B ^ Bin (XOR operation). Bout = (~A & B) | ((~A | B) &
+ Bin) (borrow occurs if A is less than B or needs a borrow). Both circuits follow simple XOR logic for
+ the primary result and AND-OR logic to determine carry or borrow conditions
 
 Write the detailed procedure here
 
 **Program:**
+```
+ Developed by:Hiba Nasreen M
+ RegisterNumber:24900188
+```
+```
+module fulladder(sum, cout, a, b, cin);
+    output sum;
+    output cout;
+    input a;
+    input b;
+    input cin;
 
-/* Program to design a half subtractor and full subtractor circuit and verify its truth table in quartus using Verilog programming. Developed by: RegisterNumber:
-*/
+	 wire w1,w2,w3;
+	 assign w1=a^b;
+	 assign w2=a&b;
+	 assign w3=w1&cin;
+	 assign sum=w1^cin;
+	 assign cout=w2|w3;
+endmodule
+```
+```
+module fullsubtractor(a,b,bin,dif,bor);
+ input a,b,bin;
+ output dif,bor;
+ assign difference=a^b^bin; 
+assign borrow=~(a^b)&bin|(~a)&b;
+endmodule
+```
 
 **RTL Schematic**
+![FULL ADDER](https://github.com/user-attachments/assets/88b4d94a-8a3c-4735-a860-4b10c0f54833)
+![Screenshot 2024-12-02 215119](https://github.com/user-attachments/assets/2210493a-67d9-4cd2-a1f6-aa4dc3bda5eb)
 
 **Output Timing Waveform**
+![fulladder](https://github.com/user-attachments/assets/cb160e20-5d93-4958-abf5-bec858699770)
+![Screenshot 2024-12-02 215804](https://github.com/user-attachments/assets/501e5df7-c176-4a38-87fc-98815cef4e7d)
 
 **Result:**
 
