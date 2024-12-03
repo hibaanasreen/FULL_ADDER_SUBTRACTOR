@@ -50,9 +50,6 @@ Borrow out = A'Bin + A'B + BBin
  Bout (the borrow out bit). Logic: Diff = A ^ B ^ Bin (XOR operation). Bout = (~A & B) | ((~A | B) &
  Bin) (borrow occurs if A is less than B or needs a borrow). Both circuits follow simple XOR logic for
  the primary result and AND-OR logic to determine carry or borrow conditions
-
-Write the detailed procedure here
-
 **Program:**
 ```
  Developed by:Hiba Nasreen M
@@ -91,8 +88,7 @@ endmodule
 ![fulladder](https://github.com/user-attachments/assets/cb160e20-5d93-4958-abf5-bec858699770)
 ![Screenshot 2024-12-02 215804](https://github.com/user-attachments/assets/501e5df7-c176-4a38-87fc-98815cef4e7d)
 
-**Result:**
-
+**Result**
 Thus the Full Adder and Full Subtractor circuits are designed and the truth tables is verified using Quartus software.
 
 
