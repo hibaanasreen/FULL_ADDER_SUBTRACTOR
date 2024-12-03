@@ -50,6 +50,7 @@ Borrow out = A'Bin + A'B + BBin
  Bout (the borrow out bit). Logic: Diff = A ^ B ^ Bin (XOR operation). Bout = (~A & B) | ((~A | B) &
  Bin) (borrow occurs if A is less than B or needs a borrow). Both circuits follow simple XOR logic for
  the primary result and AND-OR logic to determine carry or borrow conditions
+ 
 **Program:**
 ```
  Developed by:Hiba Nasreen M
